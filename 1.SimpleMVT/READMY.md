@@ -29,5 +29,53 @@ python manage.py migrate          # застосовує міграції до �
 python manage.py startapp users
 
 
-deactivate - for leave from console 
+deactivate # Щоб вийти з віртуального середовища
 ```
+
+## Нова модель в БД (Приклад Категорія:страви)
+python manage.py startapp categories # Створіть додаток categories для роботи з категоріями страв: (це якщо його немає)
+
+'categories'# Відкрийте файл mysite/settings.py і додайте 'categories' до списку INSTALLED_APPS.
+    
+_# Потім відкрийти файл categories/models.py і створити там клас / це приклад
+```
+from django.db import models
+
+class Category(models.Model):
+    name = models.CharField(max_length=200, unique=True)
+
+    def __str__(self):
+        return self.name
+```
+python manage.py makemigrations categories # зробити міграцію 
+python manage.py migrate # застосувати міграцію
+
+python manage.py shell # Щоб зайти в оболонку і змінити щось в БД
+
+>>>>from categories.models import Category # Імпортувати модель з класу 
+### Щоб щось додати
+``` 
+>>> Category.objects.create(name="Суші")
+<Category: Суші>
+>>> Category.objects.create(name="Піца")
+<Category: Піца>
+>>> Category.objects.create(name="Бургери")
+<Category: Бургери>
+```
+### Щоб щось змінити
+``` 
+>>> burger = Category.objects.get(name="Бургери")
+
+>>> burger.name = "Сендвічі"
+>>> burger.save()
+```
+### Щоб щось видалити
+``` 
+>>> pizza = Category.objects.get(name="Піца")
+>>> pizza.delete()
+``` 
+### Щоб вивести (другий рядок це результат)
+``` 
+>>> Category.objects.all()
+<QuerySet [<Category: Суші>, <Category: Сендвічі>]>
+``` 
