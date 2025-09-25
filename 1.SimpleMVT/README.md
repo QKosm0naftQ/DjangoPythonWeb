@@ -80,7 +80,7 @@ python manage.py shell # Щоб зайти в оболонку і змінити
 <QuerySet [<Category: Суші>, <Category: Сендвічі>]>
 ``` 
 
-## Клонування ПРоекту
+## Клонування ПРоекту (варіант з windows)
 ```
 Можна згрузити список пакетів, який стоїть у .env
 .venv\Scripts\activate.bat
@@ -96,5 +96,20 @@ py -m venv .venv
 python.exe -m pip install --upgrade pip
 py -m pip install Django
 cd djangomvt
+py manage.py runserver 4892
+```
+
+## Додаємо модель і робимо міграції
+```
+pip install Pillow
+py manage.py makemigrations categories
+py manage.py migrate
+```
+## Додаю superuser
+```
+python manage.py createsuperuser
+py manage.py createsuperuser
+admin
+123456
 py manage.py runserver 4892
 ```

@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'categories', # категорії для страв
+    #'categories', # категорії для страв
+    'categories.apps.CategoriesConfig'
 ]
 
 MIDDLEWARE = [
@@ -124,6 +125,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+IMAGES_URL = '/images/'
+IMAGES_ROOT = BASE_DIR / 'images'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
