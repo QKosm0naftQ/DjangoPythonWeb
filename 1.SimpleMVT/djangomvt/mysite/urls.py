@@ -29,3 +29,4 @@ urlpatterns = [
     path('about/',views.about,name='about')
 ]
 urlpatterns += static(settings.IMAGES_URL, document_root=settings.IMAGES_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

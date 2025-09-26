@@ -2,7 +2,7 @@ import os
 import uuid
 from io import BytesIO
 from django.core.files.base import ContentFile
-from django.utils.text import slugify
+from slugify import slugify  # це з python-slugify
 
 from PIL import Image
 from django.db import models

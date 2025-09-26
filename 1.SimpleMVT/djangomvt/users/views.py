@@ -1,7 +1,11 @@
 from django.shortcuts import render, redirect
 from .forms import CustomUserCreationForm
+from .forms import CustomAuthenticationForm
+
 from .utils import compress_image
 from django.contrib import messages
+from django.contrib.auth import login
+from django.contrib.auth import logout
 
 # Create your views here.
 def register(request):
@@ -30,3 +34,22 @@ def register(request):
         form = CustomUserCreationForm()
     return render(request, 'register.html', {'form': form})
  
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = CustomAuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('/')  # змініть на вашу домашню сторінку
+        else:
+            messages.error(request, 'Невірний логін або пароль')
+    else:
+        form = CustomAuthenticationForm()
+    return render(request, 'login.html', {'form': form})    
+
+
+def logout_view(request):
+    logout(request)
+    return redirect('/')  # або інша ваша домашня сторінка

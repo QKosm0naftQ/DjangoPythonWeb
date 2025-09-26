@@ -113,3 +113,5 @@ admin
 123456
 py manage.py runserver 4892
 ```
+## Бібліотеки додаткові
+pip install python-slugify
