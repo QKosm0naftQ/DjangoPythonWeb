@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     #'categories', # категорії для страв
     'categories.apps.CategoriesConfig',# категорії для страв
     'users.apps.UsersConfig',# користувачі
+    'products.apps.ProductsConfig',# продукти
+    'widget_tweaks',# для роботи з формами
 ]
 
 MIDDLEWARE = [
@@ -127,8 +129,8 @@ STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
 
-IMAGES_URL = '/images/'
-IMAGES_ROOT = BASE_DIR / 'images'
+#IMAGES_URL = '/images/'
+#IMAGES_ROOT = BASE_DIR / 'images'
 
 AUTH_USER_MODEL = 'users.CustomUser'
 

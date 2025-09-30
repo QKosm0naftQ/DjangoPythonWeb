@@ -115,3 +115,8 @@ py manage.py runserver 4892
 ```
 ## Бібліотеки додаткові
 pip install python-slugify
+
+## Додаємо продукти і фото
+python manage.py startapp products
+python manage.py makemigrations products
+python manage.py migrate

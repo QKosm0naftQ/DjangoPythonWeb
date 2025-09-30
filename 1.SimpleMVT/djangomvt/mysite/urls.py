@@ -24,9 +24,10 @@ from . import views
 urlpatterns = [
     path('users/', include('users.urls')),
     path('categories/', include('categories.urls')),
+    path('products/', include('products.urls')),
     path('admin/', admin.site.urls),
     path('',views.homepage,name='homepage'),
     path('about/',views.about,name='about')
 ]
-urlpatterns += static(settings.IMAGES_URL, document_root=settings.IMAGES_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.IMAGES_URL, document_root=settings.IMAGES_ROOT)
