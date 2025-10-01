@@ -33,10 +33,10 @@
       </td>
       <td>{{ product.name }}</td>
       <td>{{ product.category.name }}</td>
-      <td class="text-center">class="badge bg-secondary">{{ product.slug }}</span></td>
+      <td class="text-center" class="badge bg-secondary" >{{ product.slug }}</span></td>
       <td class="price">{{ product.price }} ₴</td>
       <td>
-        <a href="{% url 'products:edit_product' product.id %}" class="btn btn-warning me-1">Edit</a>
+        <a href="{% url 'products:edit_product' product.id %}" class="btn btn-warning me-1" >Edit</a>
         <button type="button" 
                 class="btn btn-sm btn-danger" 
                 data-bs-toggle="modal" 
