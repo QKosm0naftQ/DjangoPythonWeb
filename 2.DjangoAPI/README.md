@@ -21,3 +21,9 @@ python manage.py runserver 9581
 ```
 pip install psycopg2-binary
 ```
+## Створення користувачі
+```
+python manage.py shell
+>>from django.contrib.auth.models import User
+>>User.objects.create_user(username='user1', password='pass123')
+```
