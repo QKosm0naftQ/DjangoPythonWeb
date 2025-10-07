@@ -15,7 +15,7 @@ python -m django --version
 mkdir atbapi
 django-admin startproject atbapi
 cd atbapi
-python manage.py runserver 9581
+python manage.py runserver 4099
 ```
 ## Install postgres
 ```
